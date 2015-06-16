@@ -7,8 +7,15 @@ public class TestMaxNumberStringFromInts {
 
     @Test
     public void no_int_will_get_empty_string() {
-        MaxNumberString generator = new MaxNumberString();
-        String actual = generator.generate();
-        assertThat(actual, equalTo(""));
+        assertThat(maxNumberStringOf(), equalTo(""));
+    }
+
+    @Test
+    public void one_int_will_get_itself_as_max_number() {
+        assertThat(maxNumberStringOf(1), equalTo("1"));
+    }
+
+    private String maxNumberStringOf(int... numbers) {
+        return new MaxNumberString().generate(numbers);
     }
 }
