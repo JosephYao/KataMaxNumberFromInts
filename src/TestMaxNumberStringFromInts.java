@@ -13,6 +13,13 @@ public class TestMaxNumberStringFromInts {
     @Test
     public void one_int_will_get_itself_as_max_number() {
         assertThat(maxNumberStringOf(1), equalTo("1"));
+        assertThat(maxNumberStringOf(10), equalTo("10"));
+    }
+    
+    @Test
+    public void two_of_same_digits_ints_in_descending_order_will_just_concat_them_together() {
+        assertThat(maxNumberStringOf(2, 1), equalTo("21"));
+        assertThat(maxNumberStringOf(20, 10), equalTo("2010"));
     }
 
     private String maxNumberStringOf(int... numbers) {
