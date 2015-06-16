@@ -1,11 +1,13 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class MaxNumberString {
     public String generate(int... numbers) {
-        if (numbers.length == 2)
-            return String.valueOf(numbers[0]) + String.valueOf(numbers[1]);
+        List<String> numberStrings = new ArrayList<String>();
 
-        if (numbers.length == 1)
-            return String.valueOf(numbers[0]);
+        for (int number : numbers)
+            numberStrings.add(String.valueOf(number));
 
-        return "";
+        return String.join("", numberStrings);
     }
 }
