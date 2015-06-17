@@ -26,6 +26,12 @@ public class TestMaxNumberStringFromInts {
     public void any_of_same_digits_ints_in_descending_order_will_concat_them_all_together() {
         assertThat(maxNumberStringOf(30, 20, 10), equalTo("302010"));
     }
+    
+    @Test
+    public void ints_with_all_different_digits_will_concat_them_by_number_string_reverse_order() {
+        assertThat(maxNumberStringOf(10, 2), equalTo("210"));
+        assertThat(maxNumberStringOf(50, 2, 1, 9), equalTo("95021"));
+    }
 
     private String maxNumberStringOf(Integer... numbers) {
         return new MaxNumberString().generate(numbers);
