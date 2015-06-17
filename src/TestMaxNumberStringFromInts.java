@@ -27,7 +27,7 @@ public class TestMaxNumberStringFromInts {
         assertThat(maxNumberStringOf(30, 20, 10), equalTo("302010"));
     }
 
-    private String maxNumberStringOf(int... numbers) {
+    private String maxNumberStringOf(Integer... numbers) {
         return new MaxNumberString().generate(numbers);
     }
 }
