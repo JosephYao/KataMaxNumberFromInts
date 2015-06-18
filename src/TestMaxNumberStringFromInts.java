@@ -33,6 +33,12 @@ public class TestMaxNumberStringFromInts {
         assertThat(maxNumberStringOf(50, 2, 1, 9), equalTo("95021"));
     }
 
+    @Test
+    public void if_number_string_x_start_with_y_then_max_number_string_is_yx() {
+        assertThat(maxNumberStringOf(5, 50), equalTo("550"));
+        assertThat(maxNumberStringOf(50, 5), equalTo("550"));
+    }
+
     private String maxNumberStringOf(Integer... numbers) {
         return new MaxNumberString().generate(numbers);
     }
