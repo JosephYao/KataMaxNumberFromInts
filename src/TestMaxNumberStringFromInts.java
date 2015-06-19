@@ -44,6 +44,12 @@ public class TestMaxNumberStringFromInts {
         assertThat(maxNumberStringOf(5, 56), equalTo("565"));
     }
 
+    @Test
+    public void acceptance_test() {
+        assertThat(maxNumberStringOf(5, 50, 56), equalTo("56550"));
+        assertThat(maxNumberStringOf(420, 42, 423), equalTo("42423420"));
+    }
+
     private String maxNumberStringOf(Integer... numbers) {
         return new MaxNumberString().generate(numbers);
     }
