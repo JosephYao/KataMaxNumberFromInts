@@ -39,6 +39,11 @@ public class TestMaxNumberStringFromInts {
         assertThat(maxNumberStringOf(50, 5), equalTo("550"));
     }
 
+    @Test
+    public void even_x_start_with_y_but_x_still_need_to_be_put_before_y() {
+        assertThat(maxNumberStringOf(5, 56), equalTo("565"));
+    }
+
     private String maxNumberStringOf(Integer... numbers) {
         return new MaxNumberString().generate(numbers);
     }
